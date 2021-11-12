@@ -12,16 +12,12 @@ r = requests.get(url = URL)
 # extracting data in json format
 data = r.json()
 
-print(data["value"][0])
 
 Id_array = []
 value_array = []
 for i in range(len(data["value"])):
     Id_array.append(data["value"][i]["TimeDim"])
     value_array.append(data["value"][i]["Value"])
-
-print(Id_array)
-print(value_array)
 
 plt.plot(value_array)
 plt.show()
